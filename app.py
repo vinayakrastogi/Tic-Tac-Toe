@@ -112,7 +112,7 @@ class MyClass:
 
     def is_empty(self):
         temp = []
-        x = 0
+        x = 1
         for i in range(3):
             for j in range(3):
                 if self.placeHolders[i][j] == " ":
@@ -125,7 +125,7 @@ class MyClass:
         if self.check_win()[0] == 1:
             if self.check_win()[1] == self.ai_symbol:
                 os.system(self.cls)
-                self.output()                
+                self.output()              
                 print("AI WON")
                 sys.exit()
             elif self.check_win()[1] == self.user_symbol:
@@ -138,6 +138,9 @@ class MyClass:
     def exec(self):
         while True:
             if len(self.is_empty()) == 0:
+                os.system(self.cls)
+                self.output()
+                print("DRAW")
                 sys.exit()
             os.system(self.cls)
             self.output()
