@@ -1,6 +1,5 @@
 import random, sys, getch, os, time
 
-
 class MyClass:
     def __init__(self):
         self.winbreak = False
@@ -40,7 +39,6 @@ class MyClass:
 \t{self.placeHolders[2][0]} | {self.placeHolders[2][1]} | {self.placeHolders[2][2]} \t\t {self.scheme[2][0]} | {self.scheme[2][1]} | {self.scheme[2][2]}
 ''')
 
-
     def get_user_input(self):
         position = input("Enter Position :: ")
         position = int(position)
@@ -50,9 +48,7 @@ class MyClass:
                 if temp == position:
                     self.placeHolders[i][j] = self.user_symbol
                 temp += 1
-
-
-
+                
     def check_win(self):
         #checks if row's element are equal
         for i in range(3):
@@ -71,9 +67,7 @@ class MyClass:
             return 1,self.placeHolders[0][2]
 
         return 0,0
-
-
-
+        
     def ai_input(self):
         #checks if ai can win
         for i in range(3):
@@ -109,7 +103,6 @@ class MyClass:
                         return
                     y += 1
 
-
     def is_empty(self):
         temp = []
         x = 1
@@ -119,8 +112,7 @@ class MyClass:
                     temp.append(x)
                 x += 1
         return temp
-
-
+        
     def print_win(self):
         if self.check_win()[0] == 1:
             if self.check_win()[1] == self.ai_symbol:
@@ -133,8 +125,7 @@ class MyClass:
                 self.output()
                 print("USER WON")
                 sys.exit()
-
-
+                
     def exec(self):
         while True:
             if len(self.is_empty()) == 0:
@@ -148,25 +139,7 @@ class MyClass:
             self.print_win()
             self.ai_input()
             self.print_win()
-
             
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app = MyClass()
 app.exec()
         
